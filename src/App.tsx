@@ -4,6 +4,7 @@ import Connect4 from './games/Connect4';
 import MemoryMatch from './games/MemoryMatch';
 import WordScramble from './games/WordScramble';
 import Pong from './games/Pong';
+import Chess from './games/Chess';
 
 type GameState = 'lobby' | 'waiting' | 'playing';
 type GameType = 'connect4' | 'chess' | 'memory' | 'wordscramble' | 'pong';
@@ -160,7 +161,7 @@ function App() {
               </button>
             </div>
             {gameType === 'connect4' && <Connect4 roomId={roomId} />}
-            {gameType === 'chess' && <div className="text-white text-center">Chess - Coming Soon</div>}
+            {gameType === 'chess' && <Chess roomId={roomId} />}
             {gameType === 'memory' && <MemoryMatch roomId={roomId} />}
             {gameType === 'wordscramble' && <WordScramble roomId={roomId} />}
             {gameType === 'pong' && <Pong roomId={roomId} />}
