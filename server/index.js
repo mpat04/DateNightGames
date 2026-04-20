@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
   console.log('Client connected:', socket.id);
 
   socket.on('create-room', (gameType, callback) => {
-    const roomId = uuidv4().substring(0, 6);
+    const roomId = uuidv4().substring(0, 6).toUpperCase();
     rooms.set(roomId, {
       id: roomId,
       gameType,
@@ -31,7 +31,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('join-room', (roomId, callback) => {
-    const room = rooms.get(roomId);
+    const room = rooms.get(roomId.toUpperCase());
     if (!room) {
       callback({ error: 'Room not found' });
       return;
