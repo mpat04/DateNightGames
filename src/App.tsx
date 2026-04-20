@@ -3,6 +3,7 @@ import { connectSocket, getSocket } from './socket';
 import Connect4 from './games/Connect4';
 import MemoryMatch from './games/MemoryMatch';
 import WordScramble from './games/WordScramble';
+import Pong from './games/Pong';
 
 type GameState = 'lobby' | 'waiting' | 'playing';
 type GameType = 'connect4' | 'chess' | 'memory' | 'wordscramble' | 'pong';
@@ -162,7 +163,7 @@ function App() {
             {gameType === 'chess' && <div className="text-white text-center">Chess - Coming Soon</div>}
             {gameType === 'memory' && <MemoryMatch roomId={roomId} />}
             {gameType === 'wordscramble' && <WordScramble roomId={roomId} />}
-            {gameType === 'pong' && <div className="text-white text-center">Pong - Coming Soon</div>}
+            {gameType === 'pong' && <Pong roomId={roomId} />}
           </div>
         )}
       </div>
