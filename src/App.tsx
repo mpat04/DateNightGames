@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { connectSocket, getSocket } from './socket';
 import Connect4 from './games/Connect4';
+import MemoryMatch from './games/MemoryMatch';
 
 type GameState = 'lobby' | 'waiting' | 'playing';
 type GameType = 'connect4' | 'chess' | 'memory' | 'wordscramble' | 'pong';
@@ -158,7 +159,7 @@ function App() {
             </div>
             {gameType === 'connect4' && <Connect4 roomId={roomId} />}
             {gameType === 'chess' && <div className="text-white text-center">Chess - Coming Soon</div>}
-            {gameType === 'memory' && <div className="text-white text-center">Memory Match - Coming Soon</div>}
+            {gameType === 'memory' && <MemoryMatch roomId={roomId} />}
             {gameType === 'wordscramble' && <div className="text-white text-center">Word Scramble - Coming Soon</div>}
             {gameType === 'pong' && <div className="text-white text-center">Pong - Coming Soon</div>}
           </div>
